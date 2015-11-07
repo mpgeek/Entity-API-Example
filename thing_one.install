@@ -1,0 +1,57 @@
+<?php
+/**
+ * Install and update hooks for Thing One.
+ */
+
+/**
+ * Implements hook_schema().
+ */
+function thing_one_schema() {
+  $schema = array();
+
+  $schema['blog'] = array(
+    'description' => 'The base table for Blog entities',
+    'fields' => array(
+      'id' => array(
+        'description' => 'Primary key of a Blog entity',
+        'type' => 'serial',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ),
+      'title' => array(
+        'description' => 'The title of the Blog entity',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ),
+      'uid' => array(
+        'description' => 'The {users}.uid that created this Blog.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'created' => array(
+        'description' => 'The Unix timestamp when the Blog entity was created.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'changed' => array(
+        'description' => 'The Unix timestamp when the Blog entity was most recently saved.',
+        'type' => 'int',
+        'not null' => TRUE,
+        'default' => 0,
+      ),
+      'foreign keys' => array(
+        'blog_author' => array(
+          'table' => 'users',
+          'columns' => array('uid' => 'uid'),
+        ),
+      ),
+      'primary key' => array('id'),
+    ),
+  );
+
+  return $schema;
+}

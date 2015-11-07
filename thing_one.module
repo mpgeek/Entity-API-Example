@@ -4,3 +4,23 @@
  * Main implementation file for Thing One.
  */
 
+
+/**
+ * Implements hook_entity_info().
+ */
+function thing_one_entity_info() {
+  $entity_info = array();
+
+  $entity_info['blog'] = array(
+    'label' => t('Blog'),
+    'base table' => 'blog',
+    'fieldable' => TRUE,
+    'entity keys' => array(
+      'id' => 'id',
+      'label' => 'title',
+    ),
+    'module' => 'thing_one',
+  );
+
+  return $entity_info;
+}

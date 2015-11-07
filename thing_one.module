@@ -61,8 +61,8 @@ function thing_one_menu() {
 
   // View a single blog.
   $items['blog/%'] = array(
-    'title' => 'Blog',
-    'page callback' => 'thing_one_view_blog',
+    'title' => 'A Blog',
+    'page callback' => 'thing_one_blog_view',
     'page arguments' => array(1),
     'access arguments' => array('access content'),
     'file' => 'includes/thing_one.pages.inc',

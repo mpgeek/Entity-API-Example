@@ -43,14 +43,14 @@ function thing_one_schema() {
         'not null' => TRUE,
         'default' => 0,
       ),
-      'foreign keys' => array(
-        'blog_author' => array(
-          'table' => 'users',
-          'columns' => array('uid' => 'uid'),
-        ),
-      ),
-      'primary key' => array('id'),
     ),
+    'foreign keys' => array(
+      'blog_author' => array(
+        'table' => 'users',
+        'columns' => array('uid' => 'uid'),
+      ),
+    ),
+    'primary key' => array('id'),
   );
 
   return $schema;

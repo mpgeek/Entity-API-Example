@@ -1,2 +1,2 @@
-# Entity-API-Example
-An example custom entity for Drupal 7
+# Entity API Example
+An example custom entity for Drupal 7.

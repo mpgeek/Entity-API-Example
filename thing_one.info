@@ -1,0 +1,5 @@
+name = Thing One
+description = A custom blog entity type
+core = 7.x
+package = Things
+dependencies[] = entity

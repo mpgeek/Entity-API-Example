@@ -4,7 +4,6 @@
  * Main implementation file for Thing One.
  */
 
-
 /**
  * Implements hook_entity_info().
  */
@@ -12,14 +11,41 @@ function thing_one_entity_info() {
   $entity_info = array();
 
   $entity_info['blog'] = array(
+    // The basics.
     'label' => t('Blog'),
     'base table' => 'blog',
+    'module' => 'thing_one',
+    'access callback' => 'thing_one_access_callback',
+    'uri callback' => 'entity_class_uri',
+
+    // Allow users to add fields to an entity instance.
     'fieldable' => TRUE,
+
+    // Provide a single, default bundle.
+    'bundles' => array(
+      'blog' => array(
+        'label' => t('Project'),
+        'admin' => array(
+          'path' => 'admin/blogs',
+        )
+      ),
+    ),
+
+    // Use common pattern for id and label.
     'entity keys' => array(
       'id' => 'id',
       'label' => 'title',
     ),
-    'module' => 'thing_one',
+
+    // Custom backend and controller.
+    'entity class' => 'BlogEntity',
+
+    // Admin UI. Let drupal help us with the default UI controller.
+    'admin ui' => array(
+      'path' => 'admin/blogs',
+      'controller class' => 'EntityDefaultUIController',
+    ),
+
   );
 
   return $entity_info;

@@ -39,6 +39,7 @@ function thing_one_entity_info() {
 
     // Custom backend and controller.
     'entity class' => 'BlogEntity',
+    'controller class' => 'BlogEntityController',
 
     // Admin UI. Let drupal help us with the default UI controller.
     'admin ui' => array(

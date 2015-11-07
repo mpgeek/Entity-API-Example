@@ -13,7 +13,7 @@ function thing_one_schema() {
     'description' => 'The base table for Blog entities',
     'fields' => array(
       'id' => array(
-        'description' => 'Primary key of a Blog entity',
+        'description' => 'Primary identifier of a Blog entity',
         'type' => 'serial',
         'unsigned' => TRUE,
         'not null' => TRUE,

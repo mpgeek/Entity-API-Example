@@ -10,4 +10,11 @@ class BlogEntity extends Entity {
   protected function defaultUri() {
     return array('path' => 'blog/' . $this->identifier());
   }
+
+  /**
+   * Specify a default label.
+   */
+  protected function defaultLabel() {
+    return $this->title;
+  }
 }

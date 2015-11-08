@@ -10,17 +10,19 @@ class BlogEntityController extends EntityAPIController {
 
     // Add the created/updated time and the uid automatically.
     $values += array(
-      'created' => REQUEST_TIME,
-      'changed' => REQUEST_TIME,
       'uid' => $user->uid,
     );
-
-    // Let Entity API handle the creation.
     return parent::create($values);
   }
 
   public function save($entity, DatabaseTransaction $transaction = NULL) {
-    // Nothing special, just let Entity API handle it.
+    // Set the creation time if this is a new blog.
+    if (isset($entity->is_new)) {
+      $entity->created = REQUEST_TIME;
+    }
+
+    // Always update the update time.
+    $entity->changed = REQUEST_TIME;
     parent::save($entity, $transaction);
   }
 }

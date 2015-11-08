@@ -16,6 +16,7 @@ function thing_one_entity_info() {
     'label' => t('Blog'),
     'base table' => 'blog',
     'module' => 'thing_one',
+    'load hook' => 'blog_load',
     'access callback' => 'thing_one_access_callback',
     'uri callback' => 'entity_class_uri',
 
@@ -60,10 +61,21 @@ function thing_one_menu() {
   $items = array();
 
   // View a single blog.
-  $items['blog/%'] = array(
-    'title' => 'A Blog',
-    'page callback' => 'thing_one_blog_view',
-    'page arguments' => array(1),
+  $blog_uri = 'blog/%blog';
+  $blog_id_arg_position = 1;
+  $items[$blog_uri] = array(
+    'title callback' => 'entity_label',
+    'title arguments' => array('blog', $blog_id_arg_position),
+    'page callback' => 'blog_view',
+    'page arguments' => array($blog_id_arg_position),
+    'access arguments' => array('access content'),
+    'file' => 'includes/thing_one.pages.inc',
+  );
+
+  // View a blog listing.
+  $Items['blogs'] = array(
+    'title' => 'Blogs',
+    'page callback' => 'thing_one_blog_listing_view',
     'access arguments' => array('access content'),
     'file' => 'includes/thing_one.pages.inc',
   );

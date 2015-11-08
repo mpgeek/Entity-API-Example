@@ -1,7 +1,13 @@
 name = Thing One
 description = A custom blog entity type
 core = 7.x
-package = Things
+package = Features
 dependencies[] = entity
+dependencies[] = features
+dependencies[] = text
+features[features_api][] = api:2
+features[field_base][] = field_body
+features[field_instance][] = blog-blog-field_body
+
 files[] = includes/BlogEntity.inc
 files[] = includes/BlogEntityController.inc

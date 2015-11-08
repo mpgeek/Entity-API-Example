@@ -85,9 +85,9 @@ function thing_one_menu() {
   );
 
   // View a blog listing.
-  $Items['blogs'] = array(
+  $items['blogs'] = array(
     'title' => 'Blogs',
-    'page callback' => 'thing_one_blog_listing_view',
+    'page callback' => 'blog_listing_view',
     'access arguments' => array('access content'),
     'file' => 'includes/thing_one.pages.inc',
   );

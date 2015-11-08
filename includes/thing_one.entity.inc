@@ -5,15 +5,9 @@
  */
 
 /**
- * Blog load single.
+ * Blog load single, also used for menu autoload.
  *
- * @param int $id
- *   The unique identifier for a blog to load.
- * @param bool $reset
- *   Whether to reset the internal cahce for the Blog entity type.
- *
- * @return array
- *   An array of renderable blogs.
+ * @see blog_load_multiple().
  */
 function blog_load($id, $reset = FALSE) {
   $blogs = blog_load_multiple(array($id), array(), $reset);
@@ -22,6 +16,8 @@ function blog_load($id, $reset = FALSE) {
 
 /**
  * Blog load multiple.
+ *
+ * @see entity_load_multiple
  */
 function blog_load_multiple($ids = array(), $conditions = array(), $reset = FALSE) {
   return entity_load('blog', $ids, $conditions, $reset);
@@ -29,6 +25,8 @@ function blog_load_multiple($ids = array(), $conditions = array(), $reset = FALS
 
 /**
  * Blog save.
+ *
+ * @see entity_save().
  */
 function blog_save($blog) {
   entity_save('blog', $blog);
@@ -36,6 +34,8 @@ function blog_save($blog) {
 
 /**
  * Blog delete.
+ *
+ * @see entity_delete().
  */
 function blog_delete($blog) {
   entity_delete('blog', entity_id('blog', $blog));
@@ -43,6 +43,8 @@ function blog_delete($blog) {
 
 /**
  * Blog delete multiple.
+ *
+ * @see entity_delete_multiple().
  */
 function blog_delete_multiple($ids) {
   entity_delete_multiple('blog', $ids);

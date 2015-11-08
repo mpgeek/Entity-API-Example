@@ -91,11 +91,12 @@ function thing_one_menu() {
   return $items;
 }
 
+
 /**
  * Access callback for Blog instances.
  */
 function thing_one_access_callback($op, $blog = NULL, $account = NULL) {
-  // Serious placeholder for real access checks.
+  // Placeholder.
   return true;
 }
 

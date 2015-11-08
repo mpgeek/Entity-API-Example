@@ -12,6 +12,9 @@ Visit [http://example.com/admin/blogs](http://example.com/admin/blogs) to view t
 ### Create a blog.
 From the admin listing above, click on "add blog", or visit [http://www.example.com/admin/blogs/add](http://www.example.com/admin/blogs/add) directly. Fill out the fields and click "Save blog".
 
+### Edit a blog.
+From the admin listing above, click on "edit" in a blog row. Make a change, and click "Update blog".
+
 ### View a blog on the frontend.
 From the admin listing, click a blog title, or visit the blog directly at [http://example.com/blog/$ID](http://example.com/blog/$ID), where `$ID` is the blog id.
 

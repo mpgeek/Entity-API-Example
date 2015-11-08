@@ -33,10 +33,14 @@ function thing_one_entity_info() {
       ),
     ),
 
-    // One view mode, default.
+    // Default view modes.
     'view modes' => array(
       'full' => array(
         'label' => t('Default'),
+        'custom settings' => FALSE,
+      ),
+      'teaser' => array(
+        'label' => t('Teaser'),
         'custom settings' => FALSE,
       ),
     ),

@@ -33,6 +33,14 @@ function thing_one_entity_info() {
       ),
     ),
 
+    // One view mode, default.
+    'view modes' => array(
+      'full' => array(
+        'label' => t('Default'),
+        'custom settings' => FALSE,
+      ),
+    ),
+
     // Use common pattern for id and label.
     'entity keys' => array(
       'id' => 'id',

@@ -45,7 +45,7 @@ function blog_delete($blog) {
  * Blog delete multiple.
  */
 function blog_delete_multiple($ids) {
-  entity_delete_multiple('blog', ids);
+  entity_delete_multiple('blog', $ids);
 }
 
 /**

@@ -71,6 +71,9 @@ function blog_form($form, &$form_state, $blog = NULL) {
     '#weight' => 50,
   );
 
+  // Show the edit for for Field API fields.
+  field_attach_form('blog', $blog, $form, $form_state);
+
   return $form;
 }
 
